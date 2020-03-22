@@ -1,0 +1,22 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Heading from './Heading';
+
+<Meta title="MDX/Heading" component={Heading} />
+
+# Heading
+
+With `MDX` we can define a story for `Heading` right in the middle of our
+markdown documentation.
+
+<Preview>
+  <Story name="all headings">
+      <Heading importance={1}>Heading 1</Heading>
+      <Heading importance={2}>Heading 2</Heading>
+      <Heading importance={3}>Heading 3</Heading>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="icon only">
+  </Story>
+</Preview>
