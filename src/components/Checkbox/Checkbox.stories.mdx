@@ -1,0 +1,18 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, text, boolean } from "@storybook/addon-knobs";
+import Checkbox from './Checkbox';
+import colors from "../../tokens/colors";
+const listOfVariants=['light'];
+
+<Meta title="MDX/Checkbox" component={Checkbox} decorators={[ withKnobs]} parameters={{backgrounds: [{ name: 'light', value: colors.light, default: true },{ name: 'dark', value: colors.dark }]}} />
+
+# Checkbox
+
+With `MDX` we can define a story for `Checkbox` right in the middle of our
+markdown documentation.
+
+<Preview>
+  <Story name="text only">
+      <Checkbox variant={select("variant", listOfVariants, 'light')} checked={boolean("checked", false)}></Checkbox>
+  </Story>
+</Preview>

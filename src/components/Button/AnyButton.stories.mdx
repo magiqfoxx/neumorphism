@@ -1,0 +1,31 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, text } from "@storybook/addon-knobs";
+import AnyButton from './AnyButton';
+import { listOfVariants } from "./variants.js";
+import colors from "../../tokens/colors";
+import { listOfIcons } from "../Icon";
+
+<Meta title="MDX/AnyButton" component={AnyButton} decorators={[ withKnobs]} parameters={{backgrounds: [{ name: 'light', value: colors.light, default: true },{ name: 'dark', value: colors.dark }]}} />
+
+# AnyButton
+
+With `MDX` we can define a story for `AnyButton` right in the middle of our
+markdown documentation.
+
+<Preview>
+  <Story name="text only">
+      <AnyButton color={text("color", undefined)}>{text("text", "AnyButton")}</AnyButton>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="with icon">
+   <AnyButton color={text("color", undefined)} icon={select("icon", listOfIcons, "alert")}>{text("text", "AnyButton")}</AnyButton>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="icon only">
+   <AnyButton color={text("color", undefined)} icon={select("icon", listOfIcons, "alert")}></AnyButton>
+  </Story>
+</Preview>

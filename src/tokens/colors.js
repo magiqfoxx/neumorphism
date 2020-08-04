@@ -7,7 +7,8 @@ const colors = {
   white: "rgb(255, 255, 255)",
   black: "rgb(0,0,0)",
   light: "rgb(225,237,248)",
-  dark: "rgb(225,237,248)"
+  dark: "rgb(225,237,248)",
+  active: "salmon"
 };
 
 export default colors;

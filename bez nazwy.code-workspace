@@ -1,0 +1,49 @@
+{
+  "folders": [
+	{
+		"path": "../../websites/katcodes"
+	},
+	{
+		"path": "../../websites/city-break"
+	},
+	{
+		"path": "../../websites/games"
+	},
+	{
+		"path": "../../websites/dog-adoption-center"
+	},
+	{
+		"path": "../../websites/petshare"
+	},
+	{
+		"path": "../../websites/the-plant-project"
+	},
+	{
+		"path": "../../websites/witches"
+	},
+	{
+		"path": "../../websites/hotel-widget"
+	},
+	{
+		"path": "../../websites/easy-appointments"
+	},
+	{
+		"path": "../../NODE/server"
+	},
+	{
+		"path": "../../websites/coffee-mug"
+	},
+	{
+		"path": "../../websites/the-fortnightly"
+	},
+	{
+		"path": "../../styled components"
+	},
+	{
+		"path": "../../storybook"
+	},
+	{
+		"path": "."
+	}
+]
+}

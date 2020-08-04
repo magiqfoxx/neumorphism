@@ -1,13 +1,18 @@
 import React from "react";
+import styled from "styled-components";
+
 import { ReactComponent as Alert } from "../../assets/icons/alert.svg";
+import { ReactComponent as Back } from "../../assets/icons/back.svg";
 import { ReactComponent as Block } from "../../assets/icons/block.svg";
 import { ReactComponent as Check } from "../../assets/icons/check.svg";
 import { ReactComponent as Delete } from "../../assets/icons/delete.svg";
 import { ReactComponent as Edit } from "../../assets/icons/edit.svg";
 import { ReactComponent as Game } from "../../assets/icons/game.svg";
+import { ReactComponent as Hamburger } from "../../assets/icons/hamburger.svg";
 import { ReactComponent as Heart } from "../../assets/icons/heart.svg";
 import { ReactComponent as Information } from "../../assets/icons/information.svg";
 import { ReactComponent as Key } from "../../assets/icons/key.svg";
+import { ReactComponent as Left } from "../../assets/icons/left.svg";
 import { ReactComponent as Location } from "../../assets/icons/location.svg";
 import { ReactComponent as Options } from "../../assets/icons/options.svg";
 import { ReactComponent as Phone } from "../../assets/icons/phone.svg";
@@ -22,14 +27,17 @@ import { ReactComponent as Zoom } from "../../assets/icons/zoom.svg";
 
 const icons = {
   alert: <Alert />,
+  back: <Back/>,
   block: <Block />,
   check: <Check />,
   delete: <Delete />,
   edit: <Edit />,
   game: <Game />,
+  hamburger: <Hamburger />,
   heart: <Heart />,
   information: <Information />,
   key: <Key />,
+  left: <Left/>,
   location: <Location />,
   options: <Options />,
   phone: <Phone />,
@@ -42,9 +50,16 @@ const icons = {
   user: <User />,
   zoom: <Zoom />
 };
-
+const StyledIcon = styled.div.attrs({
+  "data-styled-component": "StyledIcon"
+})`
+svg{
+  width:1.5rem;
+  height:1.5rem;
+}
+`;
 const Icon = ({ name }) => {
-  return icons[name];
+  return <StyledIcon>{icons[name]}</StyledIcon>;
 };
 
 export default Icon;

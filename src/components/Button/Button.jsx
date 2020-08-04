@@ -25,9 +25,9 @@ const Text = styled.span.attrs({
   margin-left: ${props => (props.withIcon ? "0.2rem" : "0")};
 `;
 
-const Button = ({ variant, icon, children }) => {
+const Button = ({ variant="light", icon, children, className }) => {
   return (
-    <StyledButton variant={variant} iconOnly={!children}>
+    <StyledButton variant={variant} iconOnly={!children} className={className}>
       {icon && <Icon name={icon} />}
       {children && <Text withIcon={!!icon}>{children}</Text>}
     </StyledButton>
