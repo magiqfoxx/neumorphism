@@ -5,6 +5,11 @@ const Label = styled.label.attrs({
   "styled-component": "Label",
 })`
   font-family: sans-serif;
+  font-size: 2rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #d6d6d6;
+  color: white;
+  text-shadow: 3px 1px 1px #7a7a7a;
   :not(:last-child) {
     margin-bottom: 0.5rem;
     margin-top: 1rem;

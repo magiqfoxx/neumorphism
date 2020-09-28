@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 import { withKnobs, select, text, boolean } from "@storybook/addon-knobs";
 import colors from "../../../tokens/colors";
 import Mobile from "../components/Mobile";
@@ -13,33 +13,53 @@ import Toggle from "../../Toggle";
 import Button from "../../Button";
 import Icon from "../../Icon";
 import Input from "../../Input";
+import Text from "../../Text";
 
-
-<Meta title="Patterns" decorators={[ withKnobs]} component={Mobile} parameters={{backgrounds: [{ name: 'light', value: colors.light, default: true },{ name: 'dark', value: colors.dark }]}} />
+<Meta
+  title="Patterns"
+  decorators={[withKnobs]}
+  component={Mobile}
+  parameters={{
+    backgrounds: [
+      { name: "light", value: colors.light, default: true },
+      { name: "dark", value: colors.dark },
+    ],
+  }}
+/>
 
 # Patterns
 
 <Preview>
-<Story name="Login">
-  <Mobile>
-  <Header><Icon name="back"></Icon></Header>
-  <Body><Heading>Welcome to Neumorphism</Heading>
-  <LoginBox>
-  <Input id="username" label="username"></Input>
-  <Input id="password" label="password" type="password"></Input>
-  </LoginBox>
-  <Button>Log in</Button>
-  </Body>
-  <Footer>Terms & conditions apply</Footer>
-  </Mobile>
+  <Story name="Login">
+    <Mobile>
+      <Header>
+        <Icon name="back"></Icon>
+      </Header>
+      <Body>
+        <Heading>Welcome to Neumorphism</Heading>
+        <LoginBox>
+          <Input id="username" label="username"></Input>
+          <Input id="password" label="password" type="password"></Input>
+        </LoginBox>
+        <Button>Log in</Button>
+      </Body>
+      <Footer>
+        <Text inset>Terms & conditions apply</Text>
+      </Footer>
+    </Mobile>
   </Story>
 </Preview>
 
 <Preview>
-<Story name="Options">
-  <Mobile>
-  <Header><Nav><Icon name="back"></Icon><Menu></Menu></Nav></Header>
-      <Toggle variant='light' checked='true'></Toggle>
-  </Mobile>
+  <Story name="Options">
+    <Mobile>
+      <Header>
+        <Nav>
+          <Icon name="back"></Icon>
+          <Menu></Menu>
+        </Nav>
+      </Header>
+      <Toggle variant="light" checked="true"></Toggle>
+    </Mobile>
   </Story>
 </Preview>
