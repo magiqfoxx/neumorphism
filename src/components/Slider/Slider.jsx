@@ -35,11 +35,16 @@ const StyledSlider = styled.input.attrs({
   border-radius: 100px;
   width: -webkit-fill-available;
   outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
-  transition: opacity 0.2s;
+  /* opacity: 0.7; 
+  -webkit-transition: 0.2s;  */
+  transition: box-shadow 0.2s;
   transform: ${(props) => (props.vertical ? "rotate(90deg)" : "0")};
   margin: ${(props) => (props.vertical ? "3rem" : "auto")};
+  :active {
+    box-shadow: inset 1px 1px 3px #b72f20,
+      inset -5px -3px 3px rgb(255 255 255 / 54%), inset 1px 1px 10px #b72f20;
+    background: linear-gradient(139deg, #fa8072 50%, rgb(255 255 255 / 38%));
+  }
   ::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
