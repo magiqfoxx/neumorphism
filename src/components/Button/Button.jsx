@@ -4,31 +4,39 @@ import variants from "./variants";
 import Icon from "../Icon";
 
 const StyledButton = styled.button.attrs({
-  "data-styled-component": "Button"
+  "data-styled-component": "Button",
 })`
   display: flex;
-  padding: ${props => (props.iconOnly ? "0.7rem" : "0.5rem 1rem")};
+  padding: ${(props) => (props.iconOnly ? "0.7rem" : "0.5rem 1rem")};
   cursor: pointer;
-  border-radius: ${props => (props.iconOnly ? "100%" : "5px")};
+  border-radius: ${(props) => (props.iconOnly ? "100%" : "5px")};
   border: none;
   font-size: 1rem;
-  ${props => variants[props.variant]}
+  border-radius: 100px;
+  width: ${(props) => (props.iconOnly ? "auto" : "100px")};
+  margin: 0 auto;
+  background: linear-gradient(139deg, #dceaf7 50%, rgb(255 255 255 / 57%));
+  font-weight: 100;
+  ${(props) => variants[props.variant]}
   svg {
-    width: 1.1em;
-    height: 1.1em;
+    width: 1em;
+    height: 1em;
+    fill: rgba(0, 0, 0, 0.4);
   }
 `;
 const Text = styled.span.attrs({
-  "data-styled-component": "Text"
+  "data-styled-component": "Text",
 })`
+  margin: 0 auto;
   margin-top: -1px;
-  margin-left: ${props => (props.withIcon ? "0.2rem" : "0")};
+  margin-left: ${(props) => (props.withIcon ? "0.2rem" : "auto")};
+  color: rgba(0, 0, 0, 0.4);
 `;
 
-const Button = ({ variant="light", icon, children, className }) => {
+const Button = ({ variant = "light", icon, children, className }) => {
   return (
     <StyledButton variant={variant} iconOnly={!children} className={className}>
-      {icon && <Icon name={icon} />}
+      {icon && <Icon name={icon} size="small" />}
       {children && <Text withIcon={!!icon}>{children}</Text>}
     </StyledButton>
   );

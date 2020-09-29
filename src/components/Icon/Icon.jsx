@@ -2,7 +2,31 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-export const listOfIcons = [];
+export const listOfIcons = [
+  "alert",
+  "back",
+  "block",
+  "check",
+  "delete",
+  "edit",
+  "game",
+  "hamburger",
+  "heart",
+  "information",
+  "key",
+  "left",
+  "location",
+  "options",
+  "phone",
+  "picture",
+  "plane",
+  "plus",
+  "power",
+  "reload",
+  "text",
+  "user",
+  "zoom",
+];
 
 const sizes = {
   tiny: 20,
@@ -23,6 +47,7 @@ const StyledSvg = styled.svg.attrs({
   height: ${({ size }) => sizes[size]}px;
   fill: inherit;
   vertical-align: middle;
+  fill: ${(props) => colors[props.color]};
   &:hover {
     fill: grey;
     fill: ${({ hovered }) => colors[hovered]};
@@ -30,7 +55,7 @@ const StyledSvg = styled.svg.attrs({
   use {
     width: 100%;
     height: 100%;
-    fill: black;
+    fill: inherit;
   }
 `;
 export const names = process.env.SVG_LIST;

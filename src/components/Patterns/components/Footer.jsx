@@ -6,6 +6,7 @@ const StyledFooter = styled.footer.attrs({
 })`
   height: 2rem;
   text-align: center;
+  margin-top: 1rem;
 `;
 
 const Footer = ({ children }) => {

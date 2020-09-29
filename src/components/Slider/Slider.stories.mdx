@@ -1,0 +1,31 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { withKnobs, select, text, boolean } from "@storybook/addon-knobs";
+import Slider from "./Slider";
+import colors from "../../tokens/colors";
+const listOfVariants = ["light"];
+
+<Meta
+  title="MDX/Slider"
+  component={Slider}
+  decorators={[withKnobs]}
+  parameters={{
+    backgrounds: [
+      { name: "light", value: colors.light, default: true },
+      { name: "dark", value: colors.dark },
+    ],
+  }}
+/>
+
+# Slider
+
+With `MDX` we can define a story for `Slider` right in the middle of our
+markdown documentation.
+
+<Preview>
+  <Story name="text only">
+    <Slider
+      variant={select("variant", listOfVariants, "light")}
+      checked={boolean("checked", false)}
+    ></Slider>
+  </Story>
+</Preview>
