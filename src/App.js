@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import GlobalStyles from "./components/GlobalStyles";
+import Icon from "./components/Icon";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
+          <Icon name="alert" />
           <a
             className="App-link"
             href="https://reactjs.org"

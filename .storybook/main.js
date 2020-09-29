@@ -1,5 +1,5 @@
 const path = require("path");
-const custom = require("../config-overrides.js");
+const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
 
 module.exports = {
   stories: ["../src/**/*.stories.@(js|mdx)"],
@@ -12,8 +12,15 @@ module.exports = {
     "@storybook/addon-backgrounds/register",
   ],
   webpackFinal: (config) => {
-    return {
-      ...config,
-    };
+    if (!config.plugins) {
+      config.plugins = [];
+    }
+    config.plugins.push(
+      new SVGSpritemapPlugin(
+        path.resolve(__dirname, "../src/assets/icons/*.svg"),
+        { output: { filename: "spritemap.svg" } }
+      )
+    );
+    return config;
   },
 };

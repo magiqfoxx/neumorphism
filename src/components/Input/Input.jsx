@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import Icon from "../Icon";
+
 const Label = styled.label.attrs({
   "styled-component": "Label",
 })`
@@ -23,9 +25,12 @@ const StyledInput = styled.input.attrs({
   border-radius: 5px;
   border: 1px solid #e9f2fb;
   padding-left: 0.5rem;
-  box-shadow: inset 0px 0px 4px 0px rgb(191, 201, 211),
-    inset -1px -1px 2px rgb(255, 255, 255), 1px 1px 3px 0px rgb(191, 201, 211),
-    -1px -1px 3px rgba(255, 255, 255, 0.36);
+  border: none;
+  box-shadow: inset 1px 1px 3px rgb(167 189 212),
+    inset -6px -6px 6px rgba(255, 255, 255, 0.95),
+    inset 1px 1px 10px rgb(114 134 154);
+  border-radius: 100px;
+  height: 2.5rem;
   :focus {
     outline: none;
     background-color: #f0f6fd;
@@ -34,12 +39,15 @@ const StyledInput = styled.input.attrs({
       -1px -1px 3px rgba(255, 255, 255, 0.36);
   }
 `;
-
-const Input = ({ label, id, ...props }) => {
+const StyledIcon = styled(Icon).attrs({
+  "styled-component": "Icon",
+})``;
+const Input = ({ label, id, icon, ...props }) => {
   return (
     <>
       <Label htmlfor={id}>{label}</Label>
       <StyledInput id={id} name={id} {...props} />
+      {icon && <StyledIcon name={icon} />}
     </>
   );
 };
