@@ -1,12 +1,29 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+const sizes = {
+  small: {
+    height: "1rem",
+    "slider-thumb-height": "1.2rem",
+    "slider-thumb-width": "4rem",
+  },
+  medium: {
+    height: "2rem",
+    "slider-thumb-height": "2.5rem",
+    "slider-thumb-width": "2rem",
+  },
+  large: {
+    height: "2.5rem",
+    "slider-thumb-height": "3rem",
+    "slider-thumb-width": "3rem",
+  },
+};
 const StyledSlider = styled.input.attrs({
   "styled-component": "Slider",
 })`
   -webkit-appearance: none; /* Override default CSS styles */
   appearance: none;
-  height: 1.5rem;
+  height: ${(props) => sizes[props.size].height};
   background-color: #e2edf8;
   border-radius: 5px;
   border: 1px solid #e9f2fb;
@@ -14,18 +31,20 @@ const StyledSlider = styled.input.attrs({
   box-shadow: inset 1px 1px 3px rgb(167 189 212),
     inset -6px -6px 6px rgba(255, 255, 255, 0.95),
     inset 1px 1px 10px rgb(114 134 154);
+  background: linear-gradient(139deg, #dceaf7 50%, rgb(255 255 255 / 57%));
   border-radius: 100px;
-  height: 2.5rem;
   width: -webkit-fill-available;
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
   transition: opacity 0.2s;
+  transform: ${(props) => (props.vertical ? "rotate(90deg)" : "0")};
+  margin: ${(props) => (props.vertical ? "3rem" : "auto")};
   ::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    width: 3rem;
-    height: 2.5rem;
+    width: ${(props) => sizes[props.size]["slider-thumb-width"]};
+    height: ${(props) => sizes[props.size]["slider-thumb-height"]};
     border-radius: 100px;
     background-color: rgb(225, 237, 248);
     box-shadow: 2px 1px 5px 0px rgb(191, 201, 211),
@@ -34,14 +53,25 @@ const StyledSlider = styled.input.attrs({
   }
 
   ::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #4caf50; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 3rem;
+    height: ${(props) => sizes[props.size]["slider-thumb-height"]};
+    border-radius: 100px;
+    background-color: rgb(225, 237, 248);
+    box-shadow: 2px 1px 5px 0px rgb(191, 201, 211),
+      -2px -2px 3px rgb(255, 255, 255);
+    cursor: pointer;
   }
 `;
 
-const Slider = ({ min = 1, max = 100, startValue = 50, ...props }) => {
+const Slider = ({
+  size = "medium",
+  min = 1,
+  max = 100,
+  startValue = 50,
+  ...props
+}) => {
   const [value, setValue] = useState(startValue);
   return (
     <div>
@@ -50,6 +80,7 @@ const Slider = ({ min = 1, max = 100, startValue = 50, ...props }) => {
         min={min}
         max={max}
         value={value}
+        size={size}
         onChange={(e) => setValue(e.target.value)}
         {...props}
       />

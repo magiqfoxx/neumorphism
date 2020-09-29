@@ -7,7 +7,9 @@ const StyledHeading = styled.h1.attrs({
 })`
   font-size: ${(props) => headings[props.importance - 1]}px;
   font-family: sans-serif;
-  text-shadow: 3px 2px 5px #00000061;
+  text-shadow: 3px 2px 5px rgb(114 134 154);
+  color: aliceblue;
+  font-weight: 100;
 `;
 
 const Heading = ({ importance = 1, children }) => {

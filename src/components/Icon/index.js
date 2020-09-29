@@ -1,1 +1,1 @@
-export { default, listOfIcons } from "./Icon";
+export { default, names, sizes, colors } from "./Icon";

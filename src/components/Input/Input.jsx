@@ -31,6 +31,7 @@ const StyledInput = styled.input.attrs({
   box-shadow: inset 1px 1px 3px rgb(167 189 212),
     inset -6px -6px 6px rgba(255, 255, 255, 0.95),
     inset 1px 1px 10px rgb(114 134 154);
+  background: linear-gradient(139deg, #dceaf7 50%, rgb(255 255 255 / 57%));
   border-radius: 100px;
   height: 2.5rem;
   width: -webkit-fill-available;

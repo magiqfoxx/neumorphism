@@ -1,11 +1,21 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 import { withKnobs, select, text } from "@storybook/addon-knobs";
-import Button from './Button';
+import Button from "./Button";
 import { listOfVariants } from "./variants.js";
 import colors from "../../tokens/colors";
-import { listOfIcons } from "../Icon";
+import { names } from "../Icon";
 
-<Meta title="MDX/Button" component={Button} decorators={[ withKnobs]} parameters={{backgrounds: [{ name: 'light', value: colors.light, default: true },{ name: 'dark', value: colors.dark }]}} />
+<Meta
+  title="MDX/Button"
+  component={Button}
+  decorators={[withKnobs]}
+  parameters={{
+    backgrounds: [
+      { name: "light", value: colors.light, default: true },
+      { name: "dark", value: colors.dark },
+    ],
+  }}
+/>
 
 # Button
 
@@ -14,18 +24,28 @@ markdown documentation.
 
 <Preview>
   <Story name="text only">
-      <Button variant={select("variant", listOfVariants, 'light')}>{text("text", "Button")}</Button>
+    <Button variant={select("variant", listOfVariants, "light")}>
+      {text("text", "Button")}
+    </Button>
   </Story>
 </Preview>
 
 <Preview>
   <Story name="with icon">
-   <Button variant={select("variant", listOfVariants, 'light')} icon={select("icon", listOfIcons, "alert")}>{text("text", "Button")}</Button>
+    <Button
+      variant={select("variant", listOfVariants, "light")}
+      icon={select("icon", names, "alert")}
+    >
+      {text("text", "Button")}
+    </Button>
   </Story>
 </Preview>
 
 <Preview>
   <Story name="icon only">
-   <Button variant={select("variant", listOfVariants, 'light')} icon={select("icon", listOfIcons, "alert")}></Button>
+    <Button
+      variant={select("variant", listOfVariants, "light")}
+      icon={select("icon", names, "alert")}
+    ></Button>
   </Story>
 </Preview>

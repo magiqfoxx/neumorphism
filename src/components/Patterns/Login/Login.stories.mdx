@@ -38,7 +38,12 @@ import Text from "../../Text";
         <Heading>Welcome to Neumorphism</Heading>
         <LoginBox>
           <Input id="username" placeholder="username" icon="user"></Input>
-          <Input id="password" label="password" type="password"></Input>
+          <Input
+            id="password"
+            placeholder="password"
+            icon="key"
+            type="password"
+          ></Input>
         </LoginBox>
         <Button>Log in</Button>
       </Body>
@@ -58,7 +63,9 @@ import Text from "../../Text";
           <Menu></Menu>
         </Nav>
       </Header>
-      <Slider />
+      <Slider size="large" />
+      <Slider vertical />
+      <Slider size="small" />
       <Toggle variant="light" checked="true"></Toggle>
     </Mobile>
   </Story>

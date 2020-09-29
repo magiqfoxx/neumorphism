@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-export const listOfIcons = [
+export const names = [
   "alert",
   "back",
   "block",
@@ -28,13 +28,13 @@ export const listOfIcons = [
   "zoom",
 ];
 
-const sizes = {
+export const sizes = {
   tiny: 20,
   small: 30,
   medium: 50,
   large: 80,
 };
-const colors = {
+export const colors = {
   primary: "#fa9191",
   secondary: "#ffe9c5",
   white: "white",
@@ -58,7 +58,6 @@ const StyledSvg = styled.svg.attrs({
     fill: inherit;
   }
 `;
-export const names = process.env.SVG_LIST;
 
 export const variants = [
   "primary",
