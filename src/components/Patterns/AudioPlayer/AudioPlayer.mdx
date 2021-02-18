@@ -1,0 +1,39 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { withKnobs, select, text, boolean } from "@storybook/addon-knobs";
+import colors from "../../../tokens/colors";
+import Mobile from "../components/Mobile";
+import Header from "../components/Header";
+import Nav from "../components/Nav";
+import Menu from "../components/Menu";
+import Slider from "../../Slider";
+
+<Meta
+  title="Patterns/AudioPlayer"
+  decorators={[withKnobs]}
+  component={Mobile}
+  parameters={{
+    backgrounds: [
+      { name: "light", value: colors.light, default: true },
+      { name: "dark", value: colors.dark },
+    ],
+  }}
+/>
+
+#AudioPlayer
+
+<Preview>
+  <Story name="Audio Player">
+    <Mobile>
+      <Header>
+        <Nav>
+          <Icon name="back" size="small"></Icon>
+          <Menu></Menu>
+        </Nav>
+      </Header>
+      Sound volume
+      <Slider size="large" />
+      Bass
+      <Slider vertical />
+    </Mobile>
+  </Story>
+</Preview>

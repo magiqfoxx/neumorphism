@@ -39,13 +39,14 @@ export const colors = {
   secondary: "#ffe9c5",
   white: "white",
   tertiary: "#607d8b",
+  light: "#b0c4da",
 };
 const StyledSvg = styled.svg.attrs({
   "data-styled-component": "Svg",
 })`
   width: ${({ size }) => sizes[size]}px;
   height: ${({ size }) => sizes[size]}px;
-  fill: inherit;
+  /* fill: inherit; */
   vertical-align: middle;
   fill: ${(props) => colors[props.color]};
   &:hover {

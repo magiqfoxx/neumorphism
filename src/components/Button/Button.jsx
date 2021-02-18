@@ -12,9 +12,8 @@ const StyledButton = styled.button.attrs({
   border-radius: ${(props) => (props.iconOnly ? "100%" : "5px")};
   border: none;
   font-size: 1rem;
-  border-radius: 100px;
+  border-radius: ${(props) => (props.square ? "5px" : "100px")};
   width: ${(props) => (props.iconOnly ? "auto" : "100px")};
-  margin: 0 auto;
   background: linear-gradient(139deg, #dceaf7 50%, rgb(255 255 255 / 57%));
   font-weight: 100;
   ${(props) => variants[props.variant]}
@@ -33,9 +32,14 @@ const Text = styled.span.attrs({
   color: rgba(0, 0, 0, 0.4);
 `;
 
-const Button = ({ variant = "light", icon, children, className }) => {
+const Button = ({ variant = "light", icon, children, className, square }) => {
   return (
-    <StyledButton variant={variant} iconOnly={!children} className={className}>
+    <StyledButton
+      variant={variant}
+      iconOnly={!children}
+      className={className}
+      square={square}
+    >
       {icon && <Icon name={icon} size="small" />}
       {children && <Text withIcon={!!icon}>{children}</Text>}
     </StyledButton>

@@ -1,0 +1,107 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { withKnobs, select, text, boolean } from "@storybook/addon-knobs";
+import colors from "../../../tokens/colors";
+import Mobile from "../components/Mobile";
+import Header from "../components/Header";
+import Nav from "../components/Nav";
+import Menu from "../components/Menu";
+import Body from "../components/Body";
+import LoginBox from "../components/LoginBox";
+import Slider from "../../Slider";
+import Footer from "../components/Footer";
+import Heading from "../../Heading";
+import Toggle from "../../Toggle";
+import Button from "../../Button";
+import Icon from "../../Icon";
+import Input from "../../Input";
+import Text from "../../Text";
+import Checkbox from "../../Checkbox";
+import { Room, RoomName } from "./components.js";
+
+<Meta
+  title="Patterns/IOT"
+  decorators={[withKnobs]}
+  component={Mobile}
+  parameters={{
+    backgrounds: [
+      { name: "light", value: colors.light, default: true },
+      { name: "dark", value: colors.dark },
+    ],
+  }}
+/>
+
+# IOT
+
+<Preview>
+  <Story name="Heating">
+    <Mobile>
+      <Header>
+        <Icon size="small" color="light" name="back" />
+      </Header>
+      <Heading>Heating</Heading>
+      <Body>
+        <Room>
+          <RoomName inset>Kitchen</RoomName>
+          <Slider></Slider>
+        </Room>
+        <Room>
+          <RoomName inset>Living Room</RoomName>
+          <Slider></Slider>
+        </Room>
+        <Room>
+          <RoomName inset>Bedroom</RoomName>
+          <Slider></Slider>
+        </Room>
+      </Body>
+      <Footer></Footer>
+    </Mobile>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Light">
+    <Mobile>
+      <Header>
+        <Icon size="small" color="light" name="back" />
+      </Header>
+      <Heading>Light settings</Heading>
+      <Body>
+        <Room>
+          <RoomName inset>Kitchen</RoomName>
+          <Toggle></Toggle>
+        </Room>
+        <Room>
+          <RoomName inset>Living Room</RoomName>
+          <Toggle></Toggle>
+        </Room>
+        <Room>
+          <RoomName inset>Bedroom</RoomName>
+          <Toggle></Toggle>
+        </Room>
+      </Body>
+      <Footer></Footer>
+    </Mobile>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Other">
+    <Mobile>
+      <Header>
+        <Icon size="small" color="light" name="back" />
+      </Header>
+      <Heading>Other settings</Heading>
+      <Body>
+        <Room>
+          <Text inset>Close curtains automatically</Text>
+          <Checkbox></Checkbox>
+        </Room>
+        <Room>
+          <Text inset>Turn on alarm after 22</Text>
+          <Checkbox></Checkbox>
+        </Room>
+      </Body>
+      <Footer></Footer>
+    </Mobile>
+  </Story>
+</Preview>

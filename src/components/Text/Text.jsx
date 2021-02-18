@@ -19,8 +19,12 @@ const StyledText = styled.p.attrs({
     text-shadow: 1px 1px 1px #7a7a7a;
     `};
 `;
-const Text = ({ inset, children }) => {
-  return <StyledText inset={inset}>{children}</StyledText>;
+const Text = ({ inset, children, className }) => {
+  return (
+    <StyledText inset={inset} className={className}>
+      {children}
+    </StyledText>
+  );
 };
 
 export default Text;

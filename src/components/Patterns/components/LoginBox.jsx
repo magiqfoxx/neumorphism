@@ -7,6 +7,7 @@ const StyledLoginBox = styled.main.attrs({
   display: flex;
   flex-direction: column;
   padding: 2rem 0;
+  width: 100%;
 `;
 
 const LoginBox = ({ children }) => {

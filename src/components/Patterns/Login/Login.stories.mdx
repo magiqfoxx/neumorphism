@@ -9,6 +9,8 @@ import Body from "../components/Body";
 import LoginBox from "../components/LoginBox";
 import Slider from "../../Slider";
 import Footer from "../components/Footer";
+import Buttons from "../components/Buttons";
+import SquareButton from "../components/SquareButton";
 import Heading from "../../Heading";
 import Toggle from "../../Toggle";
 import Button from "../../Button";
@@ -33,7 +35,7 @@ import Checkbox from "../../Checkbox";
 
 <Preview>
   <Story name="Login">
-    <Mobile>
+    <Mobile login>
       <Header></Header>
       <Body>
         <Heading>Welcome to Neumorphism</Heading>
@@ -60,15 +62,22 @@ import Checkbox from "../../Checkbox";
     <Mobile>
       <Header>
         <Nav>
-          <Icon name="back" size="small"></Icon>
+          <Button icon="left" square></Button>
           <Menu></Menu>
         </Nav>
       </Header>
-      <Slider size="large" />
-      <Slider vertical />
-      <Slider size="small" />
-      <Checkbox />
+      Push notifications
       <Toggle variant="light" checked="true"></Toggle>
+      Screen brightness
+      <Slider size="small" />
+      Sounds
+      <Slider size="small" />
+      <Buttons>
+        <Checkbox icon="wifi" />
+        <SquareButton icon="wifi" square />
+        <SquareButton icon="transfer" square />
+        <SquareButton icon="plane" square />
+      </Buttons>
     </Mobile>
   </Story>
 </Preview>

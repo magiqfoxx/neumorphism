@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Icon from "../Icon";
 
 //ADD ANIMATION?
 const StyledLabel = styled.label.attrs({
@@ -20,6 +21,9 @@ const Box = styled.div.attrs({
     -webkit-transition: right 3s;
     transition: right 3s;
     background-color: #dceaf7;
+    svg{
+      width:100%;
+    }
 `;
 const Checkmark = styled.div.attrs({
   "data-styled-component": "Checkmark",
@@ -42,13 +46,17 @@ const StyledInput = styled.input.attrs({
 })`
   display: none;
 `;
-const Checkbox = () => {
+const Checkbox = ({ icon }) => {
   const [checked, setChecked] = useState(false);
   return (
     <>
       <StyledLabel checked={checked}>
         <Box checked={checked} onClick={() => setChecked(!checked)}>
-          <Checkmark checked={checked}>✔</Checkmark>
+          {!icon ? (
+            <Checkmark checked={checked}>✔</Checkmark>
+          ) : (
+            <Icon name={icon} />
+          )}
         </Box>
       </StyledLabel>
       <StyledInput type="checkbox" checked={checked}></StyledInput>
